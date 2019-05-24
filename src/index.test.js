@@ -15,10 +15,10 @@ test("should concatenate two cold observables with subscriptions", () => {
   const aSubscribe = " ^------!";
   const bObservable = "       -x---y--|";
   const result = "--a--b--x---y--|";
-  const a$ = cold(aObservable); // ?
-  const b$ = cold(bObservable); // ?
+  const a$ = cold(aObservable);
+  const b$ = cold(bObservable);
 
-  const stream$ = a$.pipe(concat(b$)); // ?
+  const stream$ = a$.pipe(concat(b$));
   expect(stream$).toBeMarble(result);
   expect(a$).toHaveSubscriptions([aSubscribe]);
 });
